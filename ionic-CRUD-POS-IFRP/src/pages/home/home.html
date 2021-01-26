@@ -1,0 +1,27 @@
+<ion-header>
+  <ion-navbar color="secondary">
+    <ion-title>
+    TJEB - TO-DO!
+    </ion-title>
+    <ion-buttons end>
+      <button ion-button icon-only (click)="addItem()"><ion-icon name="add-outline"></ion-icon></button>
+    </ion-buttons>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+  <ion-list>
+    <ion-item *ngFor="let item of items"><ion-label (click)="viewItem(item)">{{ item.title }}</ion-label>
+
+      <div class="item-note" item-end>        
+        <button ion-button color="secondary" (click)="editarItem(item)">
+          Alterar
+        </button>
+
+        <button ion-button color="secondary" (click)="excluirItem(item)">
+          Excluir
+        </button>
+      </div>      
+    </ion-item>
+  </ion-list>
+</ion-content>
